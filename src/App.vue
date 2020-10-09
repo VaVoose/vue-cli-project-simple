@@ -1,17 +1,24 @@
 <template>
   <div id="app">
+    <!-- This isn't working -->
+    <ToggleButton />
+    <!---->
     <img alt="Vue logo" src="./assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
+    
   </div>
+  
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import HelloWorld from './components/HelloWorld.vue';
+import ToggleButton from './components/ToggleButton.vue';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    HelloWorld,
+    ToggleButton
   }
 }
 </script>
