@@ -1,6 +1,7 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
+    <ToggleButton />
     <p>
       For a guide and recipes on how to configure / customize this project,<br>
       check out the
@@ -31,11 +32,17 @@
 </template>
 
 <script>
+import ToggleButton from '@/components/ToggleButton.vue'
+
 export default {
   name: 'HelloWorld',
   props: {
     msg: String
+  },
+  components: {
+    ToggleButton
   }
+
 }
 </script>
 
