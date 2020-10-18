@@ -1,6 +1,6 @@
 <template>
     <div class="tb">
-        <button @click="toggle" :id="condStyle"> Make the paragraph disappear! </button>
+        <a-button type="primary" @click="toggle" :id="condStyle"> Make the paragraph disappear! </a-button>
         <p id="text" v-show="isShown">
             This is some text <br>
             On multiple Lines <br>

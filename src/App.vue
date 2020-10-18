@@ -1,11 +1,31 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link> |
-      <router-link to="/custom">Custom</router-link>
+      <div class="gutter-example">
+        <a-row :gutter="16">
+          <a-col class="gutter-row" :span="6">
+            <div class="gutter-box">
+              <router-link to="/">Home</router-link>
+            </div>
+          </a-col>
+          <a-col class="gutter-row" :span="6">
+            <div class="gutter-box">
+              <router-link to="/about">About</router-link>
+            </div>
+          </a-col>
+          <a-col class="gutter-row" :span="6">
+            <div class="gutter-box">
+              <router-link to="/custom">Custom</router-link>
+            </div>
+          </a-col>
+          <a-col class="gutter-row" :span="6">
+            <div class="gutter-box">
+              <router-link to="/admin">Admin</router-link>
+            </div>
+          </a-col>
+        </a-row>
+      </div> 
     </div>
-    
     <router-view/>
   </div>
 </template>
@@ -30,5 +50,14 @@
 
 #nav a.router-link-exact-active {
   color: #42b983;
+}
+
+.gutter-example >>> .ant-row > div {
+  background: transparent;
+  border: 0;
+}
+.gutter-box {
+  background: #00a0e9;
+  padding: 5px 0;
 }
 </style>
