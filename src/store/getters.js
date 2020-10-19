@@ -1,11 +1,11 @@
 //Functions that all components can use to get data from the store
 
 export const userGetters = {
-    allUsers: function(state, getters) {
+    allUsers: function(state) {
         return state.users;
     },
 
-    userById: (state, getters) => {
+    userById: (state, getters) => id => {
         if (getters.allUsers.length > 0) {
             return getters.allUsers.filter(p => p._id === id)[0];
         }
