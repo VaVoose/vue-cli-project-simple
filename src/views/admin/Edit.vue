@@ -13,10 +13,10 @@
                     <a-input v-model="cat" placeholder="Category" />
                 </a-form-item>
                 <a-form-item> 
-                    <a-button @click.prevent="addUser" type="primary"> Submit </a-button>
+                    <a-button @click.prevent="addUser" type="primary"> <a-icon :type='showLoader'/> </a-button>
                 </a-form-item>
             </a-form>
-            <a-icon :type='showLoader'/>
+            
         </div>
     </div>
 </template>
