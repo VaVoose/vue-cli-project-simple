@@ -13,8 +13,8 @@
             <a-button type="primary" @click='increment'>+</a-button>
             <a-button type="ghost" @click='decrement'>-</a-button>
             <br> <br> Global Buttons <br>
-            <a-button >+</a-button>
-            <a-button >-</a-button>
+            <a-button @click='incrementProjectCounter'>+</a-button>
+            <a-button @click="decrementProjectCounter">-</a-button>
         </div>
         <br>
         <a-button type="primary" @click="toggle" :id="condStyle"> Make the paragraph {{shownMessage}}! </a-button>
@@ -31,6 +31,8 @@
 //These imports are only needed here since it is using Vuex locally
 import Vue from 'vue';
 import Vuex from 'vuex';
+import { mapMutations } from 'vuex';
+
 Vue.use(Vuex);
 
 const store = new Vuex.Store({
@@ -70,7 +72,14 @@ export default {
         },
         decrement() {
             store.commit('decrement');
-        }
+        },
+        incrementProjectCounter(){
+            this.$store.commit('increment');
+        },
+        //and of course
+        ...mapMutations({
+            decrementProjectCounter: 'decrement'
+        })
     },
     //Always retrieve state data from computed property
     computed: {
@@ -79,7 +88,7 @@ export default {
         },
         projectCount() {
             return this.$store.state.projectCount;
-        }
+        },
     }
 }
 </script>

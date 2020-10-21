@@ -1,6 +1,7 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
+    <p> {{ calledFromMapstate }} </p>
     <ToggleButton />
     <p>
       For a guide and recipes on how to configure / customize this project,<br>
@@ -33,6 +34,8 @@
 
 <script>
 import ToggleButton from '@/components/ToggleButton.vue'
+//this is another way of calling the state from the vuex (used in 'computed')
+import { mapState } from 'vuex';
 
 export default {
   name: 'HelloWorld',
@@ -41,8 +44,11 @@ export default {
   },
   components: {
     ToggleButton
-  }
-
+  },
+  //Shorthand for calling from the store by this.mapState = this.$store.state.calledFromMapstate
+  computed: mapState([
+    'calledFromMapstate'
+  ])
 }
 </script>
 
